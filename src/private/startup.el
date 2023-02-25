@@ -17,3 +17,6 @@
 
 ;; show column number of pointer
 (column-number-mode t)
+
+;; visual line mode. If it's not set, long line over monitor width
+(global-visual-line-mode t)
