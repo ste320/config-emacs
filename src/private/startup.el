@@ -10,7 +10,6 @@
 
 ;; tab size 2
 (setq-default tab-width 2)
-(setq ruby-indent-level 2)
 ;; tab make 2 space
 (setq indent-tabs-mode nil) 
 
