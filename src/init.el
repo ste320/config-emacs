@@ -11,6 +11,7 @@
 (load-library "skel.el")
 (load-library "load_lazy.el")
 (load-library "use_pkg.el")
+(load-library "func.el")
 (load-library "endup.el")
 
 

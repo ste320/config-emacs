@@ -39,6 +39,9 @@
 										:height 0.9))))
 )
 
+(shell-env-append-path "~/bin")
+
+
 ;; ---- debug
 ;; (display-buffer "*Messages*")
 
