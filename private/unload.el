@@ -42,6 +42,32 @@ if no files marked, always operate on current line in dired-mode "
 	(define-key dired-mode-map "]" 'diredext-exec-git-command-in-shell)
 )
 
+;; https://gist.github.com/justinhj/5945047
+(defun git-add-files(files)
+  "Run git add with the input file"
+  (interactive)
+  (shell-command (format "git add %s" files)))
+
+;; https://gist.github.com/justinhj/5945047
+(defun dired-git-add-marked-files()
+  "For each marked file in a dired buffer add it to the index
+   TODO
+    This func have the same thing
+    with diredext-exec-git-command-in-shell
+    at running git command on dired"
+  (interactive)
+  (if (eq major-mode 'dired-mode)
+      (let ((filenames (dired-get-marked-files))
+	          (files ""))
+			 (dolist (fn filenames)
+				(setq fn (shell-quote-argument fn))
+				(setq files (concat files " " fn))
+			 )
+			 (git-add-files files)
+			)
+      (error (format "Not a Dired buffer \(%s\)" major-mode))
+	)
+)
 
 ;; viper
 ;(setq viper-mode t)
