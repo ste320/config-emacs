@@ -33,3 +33,8 @@
 ;; folding : hideshow minor mode
 (global-set-key [f5] (kbd "C-c @ C-c")) ; hs-toggle-hidding
 (global-set-key [f6] (kbd "C-c @ C-t")) 
+
+
+;; mine : vim like previous, next buffer
+(global-set-key (kbd "C-c h") 'previous-buffer)
+(global-set-key (kbd "C-c l") 'next-buffer)
