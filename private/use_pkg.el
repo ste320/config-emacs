@@ -26,3 +26,9 @@
   :defer t
 	:ensure t  ;; if not installed, install
   :bind ("C-x g" . magit-status))
+
+(use-package lsp-mode
+  :ensure t
+  :defer t
+  :hook (python-mode . lsp-deferred)
+  :commands (lsp lsp-deferred))
